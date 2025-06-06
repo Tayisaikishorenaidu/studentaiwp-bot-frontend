@@ -61,7 +61,8 @@ const EnhancedCampaignSystem = () => {
   // Calendar states
   const [calendarDays, setCalendarDays] = useState(30);
   const [currentWeek, setCurrentWeek] = useState(0);
-  const daysPerWeek = 7;
+  const daysPerWeek = 5;
+  const [assignmentLoading, setAssignmentLoading] = useState({}); // { campaignId_day: true/false }
 
   useEffect(() => {
     loadData();
@@ -349,6 +350,7 @@ const EnhancedCampaignSystem = () => {
 
   const handleTemplateAssignment = async (campaignId, day, templateId) => {
     try {
+      setAssignmentLoading(prev => ({ ...prev, [`${campaignId}_${day}`]: true }));
       const response = await assignTemplateToDay(campaignId, day, templateId);
       
       if (response?.success) {
@@ -379,6 +381,8 @@ const EnhancedCampaignSystem = () => {
     } catch (error) {
       console.error('Failed to assign template:', error);
       toast.error(error.message || 'Failed to assign template');
+    } finally {
+      setAssignmentLoading(prev => ({ ...prev, [`${campaignId}_${day}`]: false }));
     }
   };
 
@@ -403,6 +407,57 @@ const EnhancedCampaignSystem = () => {
     } catch (error) {
       console.error('Failed to remove media:', error);
       toast.error('Failed to remove media');
+    }
+  };
+
+  const handleRemoveTemplateAssignment = async (campaignId, day) => {
+    try {
+      setAssignmentLoading(prev => ({ ...prev, [`${campaignId}_${day}`]: true }));
+      const response = await fetch(`/api/enhanced-campaign/campaigns/${campaignId}/remove-template/${day}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${await auth.currentUser?.getIdToken()}`
+        }
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to remove template');
+      }
+
+      const data = await response.json();
+      
+      if (data.success) {
+        // Update local state
+        setCampaigns(prev => prev.map(campaign => 
+          campaign.id === campaignId 
+            ? {
+                ...campaign,
+                dayTemplates: {
+                  ...campaign.dayTemplates,
+                  [day]: undefined
+                }
+              }
+            : campaign
+        ));
+
+        // Update selected campaign state
+        setSelectedCampaign(prev => ({
+          ...prev,
+          dayTemplates: {
+            ...prev.dayTemplates,
+            [day]: undefined
+          }
+        }));
+
+        toast.success('Template removed successfully');
+      }
+    } catch (error) {
+      console.error('Failed to remove template:', error);
+      toast.error(error.message || 'Failed to remove template');
+    } finally {
+      setAssignmentLoading(prev => ({ ...prev, [`${campaignId}_${day}`]: false }));
     }
   };
 
@@ -657,15 +712,21 @@ const EnhancedCampaignSystem = () => {
                 </div>
 
                 {selectedCampaign && (
-                  <div className="grid grid-cols-7 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                     {getCurrentWeekDays().map(day => {
                       const assignedTemplate = getTemplateForDay(selectedCampaign, day);
+                      const isLoading = assignmentLoading[`${selectedCampaign.id}_${day}`];
                       
                       return (
                         <div 
                           key={day} 
-                          className="border border-gray-200 dark:border-gray-600 rounded-lg p-4 min-h-[160px] hover:border-blue-500 dark:hover:border-blue-400 transition-colors"
+                          className={`relative border border-gray-200 dark:border-gray-600 rounded-lg p-4 min-h-[160px] transition-colors ${isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:border-blue-500 dark:hover:border-blue-400'}`}
                         >
+                          {isLoading && (
+                            <div className="absolute inset-0 bg-white dark:bg-gray-800 bg-opacity-75 flex items-center justify-center rounded-lg z-10">
+                              <RefreshCw className="w-6 h-6 animate-spin text-blue-600 dark:text-blue-400" />
+                            </div>
+                          )}
                           <div className="text-center mb-3">
                             <div className="font-medium text-gray-900 dark:text-white text-lg">Day {day}</div>
                             <div className="text-xs text-gray-500 flex items-center justify-center space-x-1">
@@ -682,6 +743,7 @@ const EnhancedCampaignSystem = () => {
                                 handleTemplateAssignment(selectedCampaign.id, day, templateId);
                               }}
                               className="w-full text-sm px-3 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                              disabled={isLoading}
                             >
                               <option value="">Select Template</option>
                               {templates.filter(t => t.isActive).map(template => (
@@ -702,8 +764,18 @@ const EnhancedCampaignSystem = () => {
                                   <MessageSquare className="w-4 h-4 text-blue-600 dark:text-blue-400 mt-0.5" />
                                 </div>
                                 <div className="flex-1 min-w-0">
-                                  <div className="font-medium text-blue-900 dark:text-blue-300 text-sm">
-                                    {assignedTemplate.name}
+                                  <div className="flex items-center justify-between">
+                                    <div className="font-medium text-blue-900 dark:text-blue-300 text-sm">
+                                      {assignedTemplate.name}
+                                    </div>
+                                    <button
+                                      onClick={() => handleRemoveTemplateAssignment(selectedCampaign.id, day)}
+                                      className="text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300"
+                                      title="Remove template"
+                                      disabled={isLoading}
+                                    >
+                                      <X className="w-4 h-4" />
+                                    </button>
                                   </div>
                                   <div className="text-blue-700 dark:text-blue-400 text-xs mt-1 line-clamp-2">
                                     {assignedTemplate.content?.message || 'No message content'}
@@ -795,7 +867,6 @@ const EnhancedCampaignSystem = () => {
                     className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
                   >
                     <option value={12}>12 hours</option>
-                    
                   </select>
                 </div>
               </div>
