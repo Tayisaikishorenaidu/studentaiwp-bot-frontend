@@ -86,22 +86,22 @@ const DashboardPage = () => {
         
         // Status filter
         const matchesStatus = filterStatus === 'all' ||
-          (filterStatus === 'active' && contact.campaignActive) ||
-          (filterStatus === 'completed' && contact.flowCompleted) ||
-          (filterStatus === 'new' && contact.currentDay === 1);
+          (filterStatus === 'active' && contact.net?.campaignActive) ||
+          (filterStatus === 'completed' && contact.net?.flowCompleted) ||
+          (filterStatus === 'new' && contact.net?.currentDay === 1);
         
         return matchesSearch && matchesStatus;
       })
       .sort((a, b) => {
         switch (sortBy) {
           case 'recent':
-            return new Date(b.lastMessage || 0) - new Date(a.lastMessage || 0);
+            return new Date(b.net?.lastMessage || 0) - new Date(a.net?.lastMessage || 0);
           case 'oldest':
-            return new Date(a.firstContact || 0) - new Date(b.firstContact || 0);
+            return new Date(a.net?.firstContact || 0) - new Date(b.net?.firstContact || 0);
           case 'name':
             return (a.net?.name || '').localeCompare(b.net?.name || '');
           case 'messages':
-            return (b.messageCount || 0) - (a.messageCount || 0);
+            return (b.net?.messageCount || 0) - (a.net?.messageCount || 0);
           default:
             return 0;
         }
@@ -164,15 +164,15 @@ const DashboardPage = () => {
   };
 
   const getContactStatusBadge = (contact) => {
-    if (contact.flowCompleted) {
+    if (contact.net?.flowCompleted) {
       return { 
         text: 'Completed', 
         color: 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400' 
       };
     }
-    if (contact.campaignActive) {
+    if (contact.net?.campaignActive) {
       return { 
-        text: `Day ${contact.currentDay || 1}`, 
+        text: `Day ${contact.net?.currentDay || 1}`, 
         color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400' 
       };
     }
@@ -406,15 +406,15 @@ const DashboardPage = () => {
                           <td className="px-6 py-4 whitespace-nowrap">
                             <div className="flex items-center text-sm text-gray-900 dark:text-white">
                               <MessageCircle className="w-4 h-4 mr-2 text-gray-400" />
-                              {contact.messageCount || 0}
+                              {contact.net?.messageCount || 0}
                             </div>
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap">
                             <div className="text-sm text-gray-900 dark:text-white">
-                              {formatDate(contact.lastMessage)}
+                              {formatDate(contact.net?.lastMessage)}
                             </div>
                             <div className="text-xs text-gray-500 dark:text-gray-400">
-                              First: {formatDate(contact.firstContact)}
+                              First: {formatDate(contact.net?.firstContact)}
                             </div>
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">

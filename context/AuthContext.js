@@ -43,6 +43,23 @@ export function AuthProvider({ children }) {
 
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
 
+  // Add refreshTokenFromCurrentUser function
+  const refreshTokenFromCurrentUser = async () => {
+    try {
+      if (auth.currentUser) {
+        const newToken = await auth.currentUser.getIdToken(true);
+        setToken(newToken);
+        localStorage.setItem('authToken', newToken);
+        axios.defaults.headers.common['Authorization'] = `Bearer ${newToken}`;
+        return newToken;
+      }
+      return null;
+    } catch (error) {
+      console.error('Error refreshing token from current user:', error);
+      return null;
+    }
+  };
+
   // Initialize axios defaults
   useEffect(() => {
     if (token) {
@@ -157,13 +174,9 @@ export function AuthProvider({ children }) {
   const apiCall = async (method, url, data = null) => {
     try {
       if (!token) {
-        // Try to get a new token if we have a current user
-        if (currentUser) {
-          const newToken = await currentUser.getIdToken(true);
-          setToken(newToken);
-          localStorage.setItem('authToken', newToken);
-          axios.defaults.headers.common['Authorization'] = `Bearer ${newToken}`;
-        } else {
+        // Try to get a new token from current user
+        const newToken = await refreshTokenFromCurrentUser();
+        if (!newToken) {
           throw new Error('No authentication token');
         }
       }
@@ -187,20 +200,15 @@ export function AuthProvider({ children }) {
         const response = await axios(config);
         return response.data;
       } catch (error) {
-        if (error.response?.status === 401 && currentUser) {
-          try {
-            // Force token refresh
-            const newToken = await currentUser.getIdToken(true);
-            setToken(newToken);
-            localStorage.setItem('authToken', newToken);
-            axios.defaults.headers.common['Authorization'] = `Bearer ${newToken}`;
-            
+        if (error.response?.status === 401) {
+          // Try to refresh token from current user
+          const newToken = await refreshTokenFromCurrentUser();
+          if (newToken) {
             // Retry the request with new token
             config.headers['Authorization'] = `Bearer ${newToken}`;
             const retryResponse = await axios(config);
             return retryResponse.data;
-          } catch (refreshError) {
-            console.error('Token refresh failed:', refreshError);
+          } else {
             await logout();
             throw new Error('Session expired. Please sign in again.');
           }
@@ -331,6 +339,15 @@ export function AuthProvider({ children }) {
       return await apiCall('POST', '/api/settings', settings);
     } catch (error) {
       console.error('Update settings error:', error);
+      throw error;
+    }
+  };
+
+  const getSettings = async () => {
+    try {
+      return await apiCall('GET', '/api/settings');
+    } catch (error) {
+      console.error('Get settings error:', error);
       throw error;
     }
   };
@@ -701,6 +718,7 @@ export function AuthProvider({ children }) {
     getWhatsAppStatus,
     getDashboardData,
     updateSettings,
+    getSettings,
     
     // Enhanced Template functions
     getCampaignTemplates,

@@ -23,7 +23,8 @@ const SettingsPage = () => {
     connectWhatsApp, 
     disconnectWhatsApp, 
     logoutWhatsApp,
-    updateSettings 
+    updateSettings,
+    getSettings
   } = useAuth();
 
   const [settings, setSettings] = useState({
@@ -48,13 +49,18 @@ const SettingsPage = () => {
 
   const loadSettings = async () => {
     try {
-      // Load settings from backend or use defaults
-      setSettings(prev => ({
-        ...prev,
-        botEnabled: connectionStatus?.connected || false
-      }));
+      const response = await getSettings();
+      
+      if (response.success && response.settings) {
+        setSettings(prev => ({
+          ...prev,
+          ...response.settings,
+          botEnabled: connectionStatus?.connected || false
+        }));
+      }
     } catch (error) {
       console.error('Failed to load settings:', error);
+      toast.error('Failed to load settings');
     }
   };
 
