@@ -4,645 +4,634 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Deployh.ai  - AI Innovation Lab</title>
-    <meta name="description" content="AI Innovation Lab - Deployh.ai" />
+    <title>Deployh.ai - Become AI Engineer in 4 Weeks</title>
     <link id="favicon" rel="icon" href="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759916226/IMG-20251008-WA0000_incyau-removebg-preview_uond7d.png" type="image/png" />
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" />
+    
+    <style>
+        /* Dotted background */
+        .hero-section {
+            background-image: radial-gradient(circle, #e5e7eb 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(90deg, #06b6d4 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* FAQ Accordion */
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        
+        .faq-item input:checked ~ .faq-content {
+            max-height: 800px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        
+        .faq-item input:checked ~ label i {
+            transform: rotate(45deg);
+        }
+        
+        @keyframes scrollInfinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
-
-
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="AI Innovation Lab - Deployh.ai" />
-    <meta property="og:description" content="AI Innovation Lab - Deployh.ai" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://github.com/abuzar-alvi" />
-    <meta property="og:image" content="" />
-
-    <!-- <link rel="stylesheet" href="css/tailwind-runtime.css" /> -->
-    <link rel="stylesheet" href="css/tailwind-build.css">
-    <link rel="stylesheet" href="css/index.css" />
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
-        integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XX9C7PNVHR"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-XX9C7PNVHR');
-    </script>
-
+.carousel-animation {
+  display: flex;
+  animation: scrollInfinite 30s linear infinite;
+}
+    </style>
 </head>
 
-<body class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#fcfcfc] 
-            tw-text-black dark:tw-bg-black  dark:tw-text-white">
-    <!--  -->
+<body class="bg-white text-gray-900 overflow-x-hidden">
 
-    <section
-        class="hero-section tw-relative tw-mt-20 tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden max-lg:tw-mt-[100px]"
-        id="hero-section">
+    <!-- HERO SECTION - Ultra Responsive -->
+    <section class="hero-section relative min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-20">
+        
+        <!-- Purple gradient blob -->
+        <div class="absolute left-1/2 -translate-x-1/2 top-[10%] h-24 w-24 md:h-32 md:w-32 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-full blur-3xl opacity-40"></div>
 
-        <!-- video container -->
-        <div class="tw-fixed tw-bg-[#000000af] dark:tw-bg-[#80808085] tw-top-0 tw-left-1/2 tw--translate-x-1/2 tw-z-20 tw-transition-opacity
-                tw-duration-300 tw-scale-0 tw-opacity-0 tw-p-2
-                tw-w-full tw-h-full tw-flex tw-place-content-center tw-place-items-center" id="video-container-bg">
-
-            <div class="tw-max-w-[80vw] max-lg:tw-max-w-full max-lg:tw-w-full tw-scale-0 tw-transition-transform tw-duration-500 tw-p-6 tw-rounded-xl  max-lg:tw-px-2 tw-w-full tw-gap-2 tw-shadow-md 
-                            tw-h-[90vh] max-lg:tw-h-auto max-lg:tw-min-h-[400px] tw-bg-white dark:tw-bg-[#16171A] tw-max-h-full
-                            " id="video-container">
-                <div class="tw-w-full tw-flex">
-                    <button type="button" onclick="closeVideo()" class="tw-ml-auto tw-text-xl" title="close">
-                        <i class="bi bi-x-circle-fill"></i>
-                    </button>
+        <div class="max-w-7xl w-full mx-auto text-center space-y-6 md:space-y-8">
+            
+            <!-- Registration Badge -->
+            <div class="inline-block">
+                <div class="bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-4 py-2 md:px-6 md:py-2 rounded-full font-semibold text-xs md:text-sm uppercase tracking-wide shadow-lg">
+                    🎓 Registrations Open - Limited 5 Seats
                 </div>
-                <div
-                    class="tw-flex tw-w-full  tw-rounded-xl tw-px-[5%] max-md:tw-px-2 tw-min-h-[300px] tw-max-h-[90%] tw-h-full">
+            </div>
 
-                    <div class="tw-relative tw-bg-black tw-min-w-full tw-min-h-full tw-overflow-clip tw-rounded-md">
-                        <!-- add your youtube video link here -->
-                        <iframe
-                            class="tw-absolute tw-top-[50%] tw--translate-y-[50%] tw-left-[50%] tw--translate-x-[50%] tw-w-full tw-h-full"
-                            src="https://www.youtube.com/embed/kT8JyzNE-dI?si=krS8zHVJy4JzSaEJ&amp;controls=0&rel=0&showinfo=0"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
+            <!-- Main Heading -->
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
+                <span class="block mb-2">Become a Certified</span>
+                <span class="block gradient-text mb-2">AI Engineer</span>
+                <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">in 4 Weeks!</span>
+            </h1>
 
-                </div>
+            <!-- Logo & Brand -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
+                <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759917642/image-removebg-preview_zlpykr.png" 
+                     alt="AI Innovation Lab" 
+                     class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain">
+                <span class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light">Deployh.AI Innovation Lab</span>
+            </div>
+
+            <!-- Description -->
+            <p class="max-w-3xl mx-auto text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 leading-relaxed px-4">
+                Master AI tools like <strong>ChatGPT, Claude, Cursor & Firebase</strong>. Build production-ready apps <strong>10X faster</strong>. Get hands-on with <strong>2 real projects</strong> and earn <strong>industry certification</strong>.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+                <a href="#enroll" class="w-full sm:w-auto bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-semibold text-base md:text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all text-center">
+                    <i class="bi bi-rocket-takeoff mr-2"></i>
+                    Enroll Now - 5 Seats Left
+                </a>
+                <a href="tel:+917893816795" class="w-full sm:w-auto border-2 border-purple-600 text-purple-600 px-6 py-3 md:px-8 md:py-4 rounded-xl font-semibold text-base md:text-lg hover:bg-purple-600 hover:text-white transition-all text-center">
+                    <i class="bi bi-telephone-fill mr-2"></i>
+                    Call: +91 7893816795
+                </a>
             </div>
         </div>
+    </section>
 
-        <div
-            class="hero-bg-gradient tw-relative tw-flex tw-h-full tw-min-h-[100vh] tw-w-full tw-flex-col tw-place-content-center tw-gap-6 tw-px-[5%] tw-pb-[5%] max-xl:tw-place-items-center max-lg:tw-p-4">
+    <!-- TOOLS CAROUSEL - Fully Responsive -->
+    <section class="py-12 md:py-16 px-4 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+      <div class="max-w-7xl mx-auto text-center">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 px-4">
+          Master Industry-Leading AI Tools
+        </h2>
+        <p class="text-gray-600 text-sm sm:text-base md:text-lg mb-8 px-4">
+          Learn the exact tools used by top AI companies worldwide
+        </p>
+    
+        <!-- Carousel Wrapper -->
+        <div class="relative overflow-hidden">
+          <div class="carousel-animation flex gap-8 md:gap-12 w-[max-content]">
+            <!-- Duplicate logos for infinite scroll -->
+            <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759910492/1759910373510-0e768f68-cf4e-4396-85d4-f1ba143cf492_21_eoaybn.jpg" class="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0" alt="Tool">
+            <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759910491/1759910373510-0e768f68-cf4e-4396-85d4-f1ba143cf492_17_ruzyym.jpg" class="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0" alt="Tool">
+            <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759910491/1759910373510-0e768f68-cf4e-4396-85d4-f1ba143cf492_2_b9tjpi.jpg" class="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0" alt="Tool">
+            <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759910490/1759910373510-0e768f68-cf4e-4396-85d4-f1ba143cf492_14_ks7uxp.jpg" class="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0" alt="Tool">
+            <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759910489/1759910373510-0e768f68-cf4e-4396-85d4-f1ba143cf492_1_vd5xhn.jpg" class="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0" alt="Tool">
+            <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759910489/1759910373510-0e768f68-cf4e-4396-85d4-f1ba143cf492_7_rtfalx.jpg" class="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0" alt="Tool">
+            <!-- Duplicate for seamless loop -->
+            <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759910492/1759910373510-0e768f68-cf4e-4396-85d4-f1ba143cf492_21_eoaybn.jpg" class="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0" alt="Tool">
+            <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759910491/1759910373510-0e768f68-cf4e-4396-85d4-f1ba143cf492_17_ruzyym.jpg" class="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0" alt="Tool">
+            <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759910491/1759910373510-0e768f68-cf4e-4396-85d4-f1ba143cf492_2_b9tjpi.jpg" class="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0" alt="Tool">
+            <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759910490/1759910373510-0e768f68-cf4e-4396-85d4-f1ba143cf492_14_ks7uxp.jpg" class="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0" alt="Tool">
+          </div>
+        </div>
+      </div>
+    </section>
+    
 
-            <div
-                class="purple-bg-grad  reveal-up tw-absolute tw-left-1/2 tw--translate-1/2 tw-top-[10%] tw-h-[120px] tw-w-[120px]">
-            </div>
-
-            <div class="tw-flex tw-flex-col tw-min-h-[60vh] tw-place-content-center tw-items-center">
-                <h2
-                    class="reveal-up tw-text-center tw-text-7xl tw-font-semibold tw-uppercase tw-leading-[90px] max-lg:tw-text-4xl max-md:tw-leading-snug">
-                    <span class=""> Deployh.AI </span>
-                    <br />
-                   <div class="tw-flex  tw-items-center tw-gap-2">
-                    <img style="width: 100px; height: 100px;" class="tw-w-auto tw-object-contain" src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759917642/image-removebg-preview_zlpykr.png" alt="AI Innovation Lab" >
-                    <span class="tw-font-thin tw-font-serif"> Innovation Lab</span>
-                   </div>
+    <!-- WHAT YOU'LL LEARN - Super Responsive Grid (NO CROPPING) -->
+    <section class="py-12 md:py-20 px-4 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 px-4">
+                    What You'll Master in 4 Weeks
                 </h2>
-                <div class="reveal-up tw-mt-8 tw-max-w-[450px] tw-text-lg max-lg:tw-text-base tw-p-2 tw-text-center
-                         tw-text-gray-800 dark:tw-text-white max-lg:tw-max-w-full">
-                    <!-- Test, Develop and Deploy all your AI models in one place, with Pixa seamless playground interface -->
-                    Empowering the Next Generation of AI Engineers Through Real-World SDLC Learning
-                    At DeployH.ai Innovation Lab, we believe true innovation begins with hands-on creation.
-                </div>
-
-                <div class="reveal-up tw-mt-10 max-md:tw-flex-col tw-flex tw-place-items-center tw-gap-4">
-
-                    
-
-                </div>
+                <p class="text-gray-600 text-base sm:text-lg md:text-xl max-w-3xl mx-auto px-4">
+                    From AI fundamentals to production deployment - complete hands-on training
+                </p>
             </div>
-
-            <!-- prompt container -->
-           
+            
+            <!-- Responsive Image Grid - FULL IMAGES (No Cropping) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                
+                <!-- Image 1 - Full Image -->
+                <div class="group relative overflow-hidden rounded-2xl md:rounded-3xl shadow-lg hover:shadow-2xl transition-all bg-white">
+                    <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1758534599/0_njeplo.jpg"
+                         alt="AI Prompt Engineering"
+                         class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div class="text-white">
+                            <h3 class="text-xl md:text-2xl font-bold mb-2">AI Prompt Engineering</h3>
+                            <p class="text-sm md:text-base">Master ChatGPT & Claude</p>
+                        </div>
+                    </div>
+                </div>
+              
+                <!-- Image 2 - Full Image -->
+                <div class="group relative overflow-hidden rounded-2xl md:rounded-3xl shadow-lg hover:shadow-2xl transition-all bg-white">
+                    <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1758534599/1_vo8gib.jpg"
+                         alt="Live Coding with AI"
+                         class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div class="text-white">
+                            <h3 class="text-xl md:text-2xl font-bold mb-2">Live Coding with AI</h3>
+                            <p class="text-sm md:text-base">Build apps 10X faster</p>
+                        </div>
+                    </div>
+                </div>
+              
+                <!-- Image 3 - Full Image -->
+                <div class="group relative overflow-hidden rounded-2xl md:rounded-3xl shadow-lg hover:shadow-2xl transition-all bg-white md:col-span-2 lg:col-span-1">
+                    <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1758773491/schools/test3343/branding/logo_1758773491271.png"
+                         alt="Industry Certification"
+                         class="w-full h-auto object-contain p-8 group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div class="text-white">
+                            <h3 class="text-xl md:text-2xl font-bold mb-2">Get Certified</h3>
+                            <p class="text-sm md:text-base">Industry-recognized credential</p>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
         </div>
     </section>
 
-    <section
-        class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-8">
-        <h2 class="reveal-up tw-text-3xl max-md:tw-text-xl">
-            You’ll Learn to Apply the Complete SDLC for AI-Powered Applications.        </h2>
-
-            <div class="reveal-up carousel-container">
-                <div class="carousel lg:w-place-content-center tw-mt-10 tw-flex tw-w-full tw-gap-5 max-md:tw-gap-2">
-                  <!-- Updated brand images with larger size -->
-                  <div class="carousel-img tw-h-[60px] tw-w-[200px]">
-                    <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759910492/1759910373510-0e768f68-cf4e-4396-85d4-f1ba143cf492_21_eoaybn.jpg" 
-                         alt="Brand 1"
-                         class="tw-h-full tw-w-full tw-object-contain tw-grayscale tw-transition-colors hover:tw-grayscale-0" />
-                  </div>
-              
-                  <div class="carousel-img tw-h-[60px] tw-w-[200px]">
-                    <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759910491/1759910373510-0e768f68-cf4e-4396-85d4-f1ba143cf492_17_ruzyym.jpg" 
-                         alt="Brand 2"
-                         class="tw-h-full tw-w-full tw-object-contain tw-grayscale tw-transition-colors hover:tw-grayscale-0" />
-                  </div>
-              
-                  <div class="carousel-img tw-h-[60px] tw-w-[200px]">
-                    <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759910491/1759910373510-0e768f68-cf4e-4396-85d4-f1ba143cf492_2_b9tjpi.jpg" 
-                         alt="Brand 3"
-                         class="tw-h-full tw-w-full tw-object-contain tw-grayscale tw-transition-colors hover:tw-grayscale-0" />
-                  </div>
-              
-                  <div class="carousel-img tw-h-[60px] tw-w-[200px]">
-                    <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759910490/1759910373510-0e768f68-cf4e-4396-85d4-f1ba143cf492_14_ks7uxp.jpg" 
-                         alt="Brand 4"
-                         class="tw-h-full tw-w-full tw-object-contain tw-grayscale tw-transition-colors hover:tw-grayscale-0" />
-                  </div>
-              
-                  <div class="carousel-img tw-h-[60px] tw-w-[200px]">
-                    <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759910489/1759910373510-0e768f68-cf4e-4396-85d4-f1ba143cf492_1_vd5xhn.jpg" 
-                         alt="Brand 5"
-                         class="tw-h-full tw-w-full tw-object-contain tw-grayscale tw-transition-colors hover:tw-grayscale-0" />
-                  </div>
-              
-                  <div class="carousel-img tw-h-[60px] tw-w-[200px]">
-                    <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759910489/1759910373510-0e768f68-cf4e-4396-85d4-f1ba143cf492_7_rtfalx.jpg" 
-                         alt="Brand 6"
-                         class="tw-h-full tw-w-full tw-object-contain tw-grayscale tw-transition-colors hover:tw-grayscale-0" />
-                  </div>
-              
-                  <div class="carousel-img tw-h-[60px] tw-w-[200px]">
-                    <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759910489/1759910373510-0e768f68-cf4e-4396-85d4-f1ba143cf492_8_nfbvm5.jpg" 
-                         alt="Brand 7"
-                         class="tw-h-full tw-w-full tw-object-contain tw-grayscale tw-transition-colors hover:tw-grayscale-0" />
-                  </div>
-              
-                  <div class="carousel-img tw-h-[60px] tw-w-[200px]">
-                    <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759910488/1759910373510-0e768f68-cf4e-4396-85d4-f1ba143cf492_6_p6jcgh.jpg" 
-                         alt="Brand 8"
-                         class="tw-h-full tw-w-full tw-object-contain tw-grayscale tw-transition-colors hover:tw-grayscale-0" />
-                  </div>
-              
-                  <div class="carousel-img tw-h-[60px] tw-w-[200px]">
-                    <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759910488/1759910373510-0e768f68-cf4e-4396-85d4-f1ba143cf492_4_sgiy8o.jpg" 
-                         alt="Brand 9"
-                         class="tw-h-full tw-w-full tw-object-contain tw-grayscale tw-transition-colors hover:tw-grayscale-0" />
-                  </div>
-              
-                  <div class="carousel-img tw-h-[60px] tw-w-[200px]">
-                    <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759910488/1759910373510-0e768f68-cf4e-4396-85d4-f1ba143cf492_3_uuepor.jpg" 
-                         alt="Brand 10"
-                         class="tw-h-full tw-w-full tw-object-contain tw-grayscale tw-transition-colors hover:tw-grayscale-0" />
-                  </div>
-                </div>
-              </div>
-              
-    </section>
-
-
     
 
-    <section
-        class="tw-relative tw-flex tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden">
-
-
-        <div class="tw-mt-8 tw-flex tw-flex-col tw-w-full tw-h-full tw-place-items-center tw-gap-5">
-            <div class="reveal-up tw-mt-5 tw-flex tw-flex-col tw-gap-3 tw-text-center">
-                <h2 class="tw-text-6xl tw-font-medium max-md:tw-text-3xl tw-p-2">
-                    What You’ll Learn in the AI Engineer SDLC Program
+    <!-- REAL PRODUCTS - Clean Black & White Design -->
+    <section class="py-12 md:py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 px-4 text-black">
+                    Real Products You'll Build
                 </h2>
+                <p class="text-gray-600 text-base sm:text-lg md:text-xl max-w-3xl mx-auto px-4">
+                    Work on live applications with actual users and real impact. These are production-ready products that students have built and deployed.
+                </p>
             </div>
-            <div class="tw-mt-6 tw-flex tw-flex-col tw-max-w-[1150px] max-lg:tw-max-w-full tw-h-full tw-p-4 max-lg:tw-place-content-center tw-gap-8">
-
-                <div class="max-xl:tw-flex max-xl:tw-flex-col tw-place-items-center tw-grid tw-grid-cols-3 tw-gap-8 tw-place-content-center tw-auto-rows-auto">
-              
-                  <!-- Image 1 -->
-                  <div class="reveal-up tw-w-[350px] tw-h-[540px] tw-flex max-md:tw-w-full">
-                    <div class="tw-relative tw-w-full tw-h-full tw-rounded-3xl tw-overflow-hidden tw-bg-[#f2f3f4] dark:tw-bg-[#080808] hover:tw-scale-[1.02] tw-transition-all tw-duration-300">
-                      <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1758534599/0_njeplo.jpg"
-                           alt="AI Learning Image 1"
-                           class="tw-w-full tw-h-full tw-object-cover" />
-                    </div>
-                  </div>
-              
-                  <!-- Image 2 -->
-                  <div class="reveal-up tw-w-[350px] tw-h-[540px] tw-flex max-md:tw-w-full">
-                    <div class="tw-relative tw-w-full tw-h-full tw-rounded-3xl tw-overflow-hidden tw-bg-[#f2f3f4] dark:tw-bg-[#080808] hover:tw-scale-[1.02] tw-transition-all tw-duration-300">
-                      <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1758534599/1_vo8gib.jpg"
-                           alt="AI Learning Image 2"
-                           class="tw-w-full tw-h-full tw-object-cover" />
-                    </div>
-                  </div>
-              
-                  <!-- Image 3 -->
-                  <div class="reveal-up tw-w-[350px] tw-h-[540px] tw-flex max-md:tw-w-full">
-                    <div class="tw-relative tw-w-full tw-h-full tw-rounded-3xl tw-overflow-hidden tw-bg-[#f2f3f4] dark:tw-bg-[#080808] hover:tw-scale-[1.02] tw-transition-all tw-duration-300">
-                      <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1758773491/schools/test3343/branding/logo_1758773491271.png"
-                           alt="AI Learning Image 3"
-                           class="tw-w-full tw-h-full tw-object-contain tw-bg-white" />
-                    </div>
-                  </div>
-              
-                </div>
-              </div>
-              
-        </div>
-    </section>
-
-    <section
-        class="tw-relative tw-mt-10 tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-items-center lg:tw-p-6">
-
-        <div class="reveal-up tw-mt-[5%] tw-flex tw-h-full tw-w-full tw-place-content-center 
-                        tw-gap-2 tw-p-4 max-lg:tw-max-w-full max-lg:tw-flex-col">
-
-            <div class="tw-relative tw-flex tw-max-w-[30%] max-lg:tw-max-w-full tw-flex-col 
-                            tw-place-items-start tw-gap-4  tw-p-2 max-lg:tw-place-items-center 
-                            max-lg:tw-place-content-center max-lg:tw-w-full">
-                <div
-                    class="tw-top-40 tw-flex tw-flex-col lg:tw-sticky tw-place-items-center tw-max-h-fit tw-max-w-[850px] max-lg:tw-max-h-fit max-lg:tw-max-w-[320px] tw-overflow-hidden">
-                    <h2 class="tw-text-5xl tw-font-serif tw-text-center tw-font-medium  max-md:tw-text-3xl">
-                        Discover What We’re Building with AI
-                    </h2>
-
+            
+            <!-- Compact Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                
+                <!-- Student AI - Compact Card -->
+                <a href="https://thestudentai.in/" target="_blank" 
+                   class="group bg-white border-2 border-gray-200 p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl hover:border-black transition-all duration-300 relative overflow-hidden">
                     
+                    <div class="relative z-10">
+                        <!-- Header Section -->
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white text-lg flex-shrink-0">
+                                <i class="bi bi-book-half"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-lg md:text-xl font-bold text-black mb-1">Student AI</h3>
+                                <p class="text-gray-600 text-xs">40+ Features • 10K+ Students</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Description -->
+                        <p class="text-gray-600 text-sm mb-3 leading-relaxed">
+                            AI-powered learning platform for students Class 4-12 with gradebook, practice tests, and doubt solving.
+                        </p>
+                        
+                        <!-- Key Features -->
+                        <div class="space-y-1 mb-3">
+                            <div class="flex items-center gap-2 text-xs text-gray-600">
+                                <i class="bi bi-check text-green-600"></i>
+                                <span>AI gradebook & performance tracking</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-gray-600">
+                                <i class="bi bi-check text-green-600"></i>
+                                <span>Personalized practice tests</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-gray-600">
+                                <i class="bi bi-check text-green-600"></i>
+                                <span>24/7 AI doubt solving</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Hover Information -->
+                        <div class="opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="grid grid-cols-2 gap-2 mb-3 p-3 bg-gray-50 rounded-lg">
+                                <div class="text-center">
+                                    <div class="text-sm font-bold text-black">10K+</div>
+                                    <div class="text-xs text-gray-600">Students</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-sm font-bold text-black">95%</div>
+                                    <div class="text-xs text-gray-600">Satisfaction</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Technology Stack -->
+                            <div class="mb-3">
+                                <div class="flex flex-wrap gap-1">
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">React</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Firebase</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">OpenAI</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Call to Action -->
+                        <div class="flex items-center justify-between pt-3 border-t border-gray-200">
+                            <span class="text-black font-semibold text-sm inline-flex items-center gap-1">
+                                Visit Site 
+                                <i class="bi bi-arrow-up-right group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                            </span>
+                            <div class="w-6 h-6 bg-black rounded-full flex items-center justify-center text-white">
+                                <i class="bi bi-arrow-right text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
 
-                </div>
+                <!-- WhatsApp AI Tutor -->
+                <a href="https://whatsappaitutor.com/" target="_blank" 
+                   class="group bg-white border-2 border-gray-200 p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl hover:border-black transition-all duration-300 relative overflow-hidden">
+                    
+                    <div class="relative z-10">
+                        <!-- Header -->
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white text-lg">
+                                <i class="bi bi-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg md:text-xl font-bold text-black">WhatsApp AI Tutor</h3>
+                                <p class="text-gray-600 text-xs">5K+ Daily Users</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Description -->
+                        <p class="text-gray-600 text-sm mb-3 leading-relaxed">
+                            AI tutoring via WhatsApp in multiple Indian languages. Get instant help with homework and exam prep.
+                        </p>
+                        
+                        <!-- Key Features -->
+                        <div class="space-y-1 mb-3">
+                            <div class="flex items-center gap-2 text-xs text-gray-600">
+                                <i class="bi bi-check text-green-600"></i>
+                                <span>Multi-language support</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-gray-600">
+                                <i class="bi bi-check text-green-600"></i>
+                                <span>Instant WhatsApp responses</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-gray-600">
+                                <i class="bi bi-check text-green-600"></i>
+                                <span>Voice message support</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Hover Information -->
+                        <div class="opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="bg-gray-50 rounded-lg p-2 mb-2">
+                                <div class="text-center">
+                                    <div class="text-sm font-bold text-black">5,000+</div>
+                                    <div class="text-xs text-gray-600">Daily Users</div>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-1 mb-2">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Hindi</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">English</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Telugu</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Call to Action -->
+                        <div class="flex items-center justify-between pt-3 border-t border-gray-200">
+                            <span class="text-black font-semibold text-sm">Try on WhatsApp</span>
+                            <i class="bi bi-arrow-up-right text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
 
+                <!-- InterviewBaba -->
+                <a href="https://interviewbaba.com/" target="_blank" 
+                   class="group bg-white border-2 border-gray-200 p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl hover:border-black transition-all duration-300 relative overflow-hidden">
+                    
+                    <div class="relative z-10">
+                        <!-- Header -->
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white text-lg">
+                                <i class="bi bi-person-badge-fill"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg md:text-xl font-bold text-black">InterviewBaba</h3>
+                                <p class="text-gray-600 text-xs">2K+ Success Stories</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Description -->
+                        <p class="text-gray-600 text-sm mb-3 leading-relaxed">
+                            Complete interview preparation platform with curated guides for tech and non-tech roles.
+                        </p>
+                        
+                        <!-- Key Features -->
+                        <div class="space-y-1 mb-3">
+                            <div class="flex items-center gap-2 text-xs text-gray-600">
+                                <i class="bi bi-check text-green-600"></i>
+                                <span>Tech & Non-tech prep</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-gray-600">
+                                <i class="bi bi-check text-green-600"></i>
+                                <span>Mock interview sessions</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-gray-600">
+                                <i class="bi bi-check text-green-600"></i>
+                                <span>FAANG company guides</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Hover Information -->
+                        <div class="opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="bg-gray-50 rounded-lg p-2 mb-2">
+                                <div class="text-center">
+                                    <div class="text-sm font-bold text-black">2,000+</div>
+                                    <div class="text-xs text-gray-600">Success Stories</div>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-1 mb-2">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tech</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Non-Tech</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">FAANG</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Call to Action -->
+                        <div class="flex items-center justify-between pt-3 border-t border-gray-200">
+                            <span class="text-black font-semibold text-sm">Explore Platform</span>
+                            <i class="bi bi-arrow-up-right text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Student AI Trial - Wide Card -->
+                <a href="https://trial.thestudentai.in/" target="_blank" 
+                   class="group md:col-span-2 lg:col-span-1 bg-white border-2 border-gray-200 p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl hover:border-black transition-all duration-300 relative overflow-hidden">
+                    
+                    <div class="relative z-10">
+                        <!-- Header Section -->
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white text-lg flex-shrink-0">
+                                <i class="bi bi-journal-richtext"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-lg md:text-xl font-bold text-black mb-1">Student AI Trial</h3>
+                                <p class="text-gray-600 text-xs">100% Free • All Features</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Description -->
+                        <p class="text-gray-600 text-sm mb-3 leading-relaxed">
+                            Try all premium features free - gradebook, practice tests, AI doubt solving, and study plans.
+                        </p>
+                        
+                        <!-- Trial Features -->
+                        <div class="grid grid-cols-3 gap-2 mb-3">
+                            <div class="text-center p-2 bg-gray-50 rounded-lg">
+                                <div class="text-sm font-bold text-black">100%</div>
+                                <div class="text-xs text-gray-600">Free</div>
+                            </div>
+                            <div class="text-center p-2 bg-gray-50 rounded-lg">
+                                <div class="text-sm font-bold text-black">All</div>
+                                <div class="text-xs text-gray-600">Features</div>
+                            </div>
+                            <div class="text-center p-2 bg-gray-50 rounded-lg">
+                                <div class="text-sm font-bold text-black">No</div>
+                                <div class="text-xs text-gray-600">Signup</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Available Features -->
+                        <div class="space-y-1 mb-3">
+                            <div class="flex items-center gap-2 text-xs text-gray-600">
+                                <i class="bi bi-check-circle-fill text-green-600"></i>
+                                <span>Full gradebook functionality</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-gray-600">
+                                <i class="bi bi-check-circle-fill text-green-600"></i>
+                                <span>Unlimited practice tests</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-gray-600">
+                                <i class="bi bi-check-circle-fill text-green-600"></i>
+                                <span>AI doubt solving</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Hover Information -->
+                        <div class="opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="bg-gray-50 rounded-lg p-3 mb-3">
+                                <h4 class="text-xs font-semibold text-black mb-1">What You'll Experience:</h4>
+                                <ul class="text-xs text-gray-600 space-y-1">
+                                    <li>• Complete AI learning experience</li>
+                                    <li>• Real-time performance analytics</li>
+                                    <li>• Interactive doubt resolution</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Call to Action -->
+                        <div class="flex items-center justify-between pt-3 border-t border-gray-200">
+                            <span class="text-black font-semibold text-sm">Try Free Demo</span>
+                            <i class="bi bi-arrow-up-right text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
             </div>
-
-            <div class="tw-flex tw-flex-col tw-gap-10 tw-h-full tw-max-w-1/2 max-lg:tw-max-w-full tw-px-[10%]
-            max-lg:tw-px-4 max-lg:tw-gap-3 max-lg:tw-w-full lg:tw-top-[20%]
-            tw-place-items-center
-            ">
-
-<!-- Card 1: Student AI (Website) -->
-<div class="reveal-up tw-h-[240px] tw-w-[450px] max-md:tw-w-full">
-<a href="https://thestudentai.in/" target="_blank" rel="noopener noreferrer"
-class="tw-flex tw-w-full tw-h-full tw-gap-8 tw-rounded-xl 
-hover:tw-shadow-lg dark:tw-shadow-[#080808] tw-duration-300 tw-transition-all
-tw-p-8 tw-group/card">
-<div class="tw-text-4xl max-md:tw-text-2xl">
-<i class="bi bi-book-half"></i>
-</div>
-
-<div class="tw-flex tw-flex-col tw-gap-4">
-<h3 class="tw-text-2xl max-md:tw-text-xl">Student AI — Study Companion</h3>
-<p class="tw-text-gray-800 dark:tw-text-gray-100 max-md:tw-text-sm">
-AI-powered learning companion for Class 4–12: homework help, step-by-step solutions, exam prep and ~40+ AI features (website + tools). 
-</p>
-
-<div class="tw-mt-auto tw-flex tw-gap-2 tw-underline tw-underline-offset-4">
-<span>Visit site</span>
-<i class="bi bi-arrow-up-right group-hover/card:tw--translate-y-1 group-hover/card:tw-translate-x-1 tw-duration-300 tw-transition-transform"></i>
-</div>
-</div>
-</a>
-</div>
-
-<!-- Card 2: WhatsApp AI Tutor -->
-<div class="reveal-up tw-h-[240px] tw-w-[450px] max-md:tw-w-full">
-<a href="https://whatsappaitutor.com/" target="_blank" rel="noopener noreferrer"
-class="tw-flex tw-w-full tw-h-full tw-gap-8 tw-rounded-xl
-hover:tw-shadow-lg dark:tw-shadow-[#080808] tw-duration-300 tw-transition-all tw-p-8 tw-group/card">
-<div class="tw-text-4xl max-md:tw-text-2xl">
-<i class="bi bi-whatsapp"></i>
-</div>
-
-<div class="tw-flex tw-flex-col tw-gap-4">
-<h3 class="tw-text-2xl max-md:tw-text-xl">WhatsApp AI Tutor</h3>
-<p class="tw-text-gray-800 dark:tw-text-gray-100 max-md:tw-text-sm">
-WhatsApp-based AI tutor: ask questions on WhatsApp, get instant step-by-step answers; supports multiple Indian languages and a free-to-start model.
-</p>
-
-<div class="tw-mt-auto tw-flex tw-gap-2 tw-underline tw-underline-offset-4">
-<span>Start on WhatsApp</span>
-<i class="bi bi-arrow-up-right group-hover/card:tw--translate-y-1 group-hover/card:tw-translate-x-1 tw-duration-300 tw-transition-transform"></i>
-</div>
-</div>
-</a>
-</div>
-
-<!-- Card 3: Student AI Trial / Academy -->
-<div class="reveal-up tw-h-[240px] tw-w-[450px] max-md:tw-w-full">
-<a href="https://trial.thestudentai.in/" target="_blank" rel="noopener noreferrer"
-class="tw-flex tw-w-full tw-h-full tw-gap-8 tw-rounded-xl hover:tw-shadow-lg tw-duration-300 
-tw-transition-all dark:tw-shadow-[#080808] tw-p-8 tw-group/card">
-<div class="tw-text-4xl max-md:tw-text-2xl">
-<i class="bi bi-journal-richtext"></i>
-</div>
-
-<div class="tw-flex tw-flex-col tw-gap-4">
-<h3 class="tw-text-2xl max-md:tw-text-xl">Student AI — Trial & Tools</h3>
-<p class="tw-text-gray-800 dark:tw-text-gray-100 max-md:tw-text-sm">
-Demo & trial portal showing features like gradebook, topic practice, doubt resolution and exam resources — a hands-on trial of the Student AI product.
-</p>
-
-<div class="tw-mt-auto tw-flex tw-gap-2 tw-underline tw-underline-offset-4">
-<span>Try demo</span>
-<i class="bi bi-arrow-up-right group-hover/card:tw--translate-y-1 group-hover/card:tw-translate-x-1 tw-duration-300 tw-transition-transform"></i>
-</div>
-</div>
-</a>
-</div>
-
-<!-- Card 4: InterviewBaba -->
-<div class="reveal-up tw-h-[240px] tw-w-[450px] max-md:tw-w-full">
-<a href="https://interviewbaba.com/" target="_blank" rel="noopener noreferrer"
-class="tw-flex tw-w-full dark:tw-shadow-[#080808] tw-h-full tw-gap-8 tw-rounded-xl  hover:tw-shadow-lg tw-duration-300 
-tw-transition-all tw-p-8 tw-group/card">
-<div class="tw-text-4xl max-md:tw-text-2xl">
-<i class="bi bi-person-badge-fill"></i>
-</div>
-
-<div class="tw-flex tw-flex-col tw-gap-4">
-<h3 class="tw-text-2xl max-md:tw-text-xl">InterviewBabu — Interview Prep</h3>
-<p class="tw-text-gray-800 dark:tw-text-gray-100 max-md:tw-text-sm">
-Curated interview guides, technical question sets, and preparation resources to help candidates ace technical interviews.
-</p>
-
-<div class="tw-mt-auto tw-flex tw-gap-2 tw-underline tw-underline-offset-4">
-<span>Visit InterviewBaba</span>
-<i class="bi bi-arrow-up-right group-hover/card:tw--translate-y-1 group-hover/card:tw-translate-x-1 tw-duration-300 tw-transition-transform"></i>
-</div>
-</div>
-</a>
-</div>
-
-<!-- Card 5: Amazon — Student AI USB product -->
-<div class="reveal-up tw-h-[240px] tw-w-[450px] max-md:tw-w-full">
-<a href="https://www.amazon.in/dp/B0DL31J11R" target="_blank" rel="noopener noreferrer"
-class="tw-flex tw-w-full tw-h-full tw-gap-8 tw-rounded-xl dark:tw-shadow-[#080808] hover:tw-shadow-lg tw-duration-300 
-tw-transition-all tw-p-8 tw-group/card">
-<div class="tw-text-4xl max-md:tw-text-2xl">
-<i class="bi bi-box-seam"></i>
-</div>
-
-<div class="tw-flex tw-flex-col tw-gap-4">
-<h3 class="tw-text-2xl max-md:tw-text-xl">Student AI — Amazon (USB Product)</h3>
-<p class="tw-text-gray-800 dark:tw-text-gray-100 max-md:tw-text-sm">
-Physical Student AI learning product (USB-based offering) listed on Amazon as a Student Learning Companion / Homework Assistant.
-</p>
-
-<div class="tw-mt-auto tw-flex tw-gap-2 tw-underline tw-underline-offset-4">
-<span>View on Amazon</span>
-<i class="bi bi-arrow-up-right group-hover/card:tw--translate-y-1 group-hover/card:tw-translate-x-1 tw-duration-300 tw-transition-transform"></i>
-</div>
-</div>
-</a>
-</div>
-
-
-
-</div>
-
-
-
         </div>
     </section>
 
+    <!-- FAQ - Mobile Friendly -->
+    <section class="py-12 md:py-20 px-4 bg-white">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 md:mb-12 px-4">
+                Frequently Asked Questions
+            </h2>
+            
+            <div class="space-y-3 md:space-y-4">
+                
+                <!-- FAQ 1 -->
+                <div class="faq-item border-2 border-gray-200 rounded-xl overflow-hidden hover:border-purple-300 transition-colors">
+                    <input type="checkbox" id="faq1" class="hidden">
+                    <label for="faq1" class="flex justify-between items-center p-4 md:p-6 cursor-pointer bg-white hover:bg-gray-50">
+                        <span class="text-base md:text-lg font-semibold pr-4">Who is this program for?</span>
+                        <i class="bi bi-plus text-2xl md:text-3xl text-purple-600 transition-transform flex-shrink-0"></i>
+                    </label>
+                    <div class="faq-content px-4 md:px-6 bg-gray-50">
+                        <p class="text-sm md:text-base text-gray-700 leading-relaxed">
+                            Perfect for developers, students, and career switchers who want to build AI apps 10X faster. No advanced ML knowledge required - we teach from basics!
+                        </p>
+                    </div>
+                </div>
 
-    
+                <!-- FAQ 2 -->
+                <div class="faq-item border-2 border-gray-200 rounded-xl overflow-hidden hover:border-purple-300 transition-colors">
+                    <input type="checkbox" id="faq2" class="hidden">
+                    <label for="faq2" class="flex justify-between items-center p-4 md:p-6 cursor-pointer bg-white hover:bg-gray-50">
+                        <span class="text-base md:text-lg font-semibold pr-4">What tools will I learn?</span>
+                        <i class="bi bi-plus text-2xl md:text-3xl text-purple-600 transition-transform flex-shrink-0"></i>
+                    </label>
+                    <div class="faq-content px-4 md:px-6 bg-gray-50">
+                        <p class="text-sm md:text-base text-gray-700 leading-relaxed">
+                            ChatGPT, Claude AI, Cursor IDE, GitHub Copilot, Firebase, and modern deployment platforms. Focus on AI-assisted coding and prompt engineering.
+                        </p>
+                    </div>
+                </div>
 
-    <section
-    class="tw-flex tw-min-h-[100vh] tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-p-[2%]">
-    <h3 class="reveal-up tw-text-4xl tw-font-medium tw-text-center max-md:tw-text-2xl">
-      Join the professionals trained in the DeployH.ai SDLC Program
-    </h3>
-  
-    <!-- Testimonials (SDLC-focused) -->
-    <div class="tw-mt-20 tw-gap-10 tw-space-y-8  max-md:tw-columns-1 lg:tw-columns-2 xl:tw-columns-3">
-  
-      <div class="reveal-up tw-flex tw-h-fit tw-w-[350px] tw-break-inside-avoid 
-                  tw-flex-col tw-gap-4 tw-rounded-lg tw-border-[1px] 
-                  tw-bg-[#f2f3f4] dark:tw-bg-[#080808] dark:tw-border-[#1f2123] tw-p-4 max-lg:tw-w-[320px]">
-  
-        <div class="tw-flex tw-place-items-center tw-gap-3">
-          <div class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full">
-            <img src="./assets/images/people/man2.jpg" class="tw-h-full tw-w-full tw-object-cover" alt="man" />
-          </div>
-          <div class="tw-flex tw-flex-col tw-gap-1">
-            <div class="tw-font-semibold">Asha K.</div>
-            <div class="tw-text-gray-700 dark:tw-text-gray-300">Senior ML Engineer, NovaTech</div>
-          </div>
+                <!-- FAQ 3 -->
+                <div class="faq-item border-2 border-gray-200 rounded-xl overflow-hidden hover:border-purple-300 transition-colors">
+                    <input type="checkbox" id="faq3" class="hidden">
+                    <label for="faq3" class="flex justify-between items-center p-4 md:p-6 cursor-pointer bg-white hover:bg-gray-50">
+                        <span class="text-base md:text-lg font-semibold pr-4">What projects will I build?</span>
+                        <i class="bi bi-plus text-2xl md:text-3xl text-purple-600 transition-transform flex-shrink-0"></i>
+                    </label>
+                    <div class="faq-content px-4 md:px-6 bg-gray-50">
+                        <p class="text-sm md:text-base text-gray-700 leading-relaxed">
+                            2 complete production apps: Student AI learning companion and WhatsApp AI assistant. These are real products with actual users!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item border-2 border-gray-200 rounded-xl overflow-hidden hover:border-purple-300 transition-colors">
+                    <input type="checkbox" id="faq4" class="hidden">
+                    <label for="faq4" class="flex justify-between items-center p-4 md:p-6 cursor-pointer bg-white hover:bg-gray-50">
+                        <span class="text-base md:text-lg font-semibold pr-4">What certification will I get?</span>
+                        <i class="bi bi-plus text-2xl md:text-3xl text-purple-600 transition-transform flex-shrink-0"></i>
+                    </label>
+                    <div class="faq-content px-4 md:px-6 bg-gray-50">
+                        <p class="text-sm md:text-base text-gray-700 leading-relaxed">
+                            Skilled AI Developer Certification recognized across India. Plus printed materials, portfolio building, and career mentorship included!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item border-2 border-gray-200 rounded-xl overflow-hidden hover:border-purple-300 transition-colors">
+                    <input type="checkbox" id="faq5" class="hidden">
+                    <label for="faq5" class="flex justify-between items-center p-4 md:p-6 cursor-pointer bg-white hover:bg-gray-50">
+                        <span class="text-base md:text-lg font-semibold pr-4">How many seats per batch?</span>
+                        <i class="bi bi-plus text-2xl md:text-3xl text-purple-600 transition-transform flex-shrink-0"></i>
+                    </label>
+                    <div class="faq-content px-4 md:px-6 bg-gray-50">
+                        <p class="text-sm md:text-base text-gray-700 leading-relaxed">
+                            Only 5 developer seats per batch for personalized attention. New batches start every 4 weeks with morning and afternoon class options.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
         </div>
-  
-        <p class="tw-mt-4 tw-text-gray-800 dark:tw-text-gray-200">
-          The DeployH.ai SDLC program taught me how to take models from prototype to production — CI/CD, model
-          versioning and automated testing were game changers. I shipped production features with confidence.
-        </p>
-      </div>
-  
-      <div class="reveal-up tw-flex tw-h-fit tw-w-[350px] tw-break-inside-avoid 
-                  tw-flex-col tw-gap-4 tw-rounded-lg tw-border-[1px] 
-                  tw-bg-[#f2f3f4] dark:tw-bg-[#080808] dark:tw-border-[#1f2123] tw-p-4 max-lg:tw-w-[320px]">
-  
-        <div class="tw-flex tw-place-items-center tw-gap-3">
-          <div class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full">
-            <img src="./assets/images/people/women.jpg" class="tw-h-full tw-w-full tw-object-cover" alt="women" />
-          </div>
-          <div class="tw-flex tw-flex-col tw-gap-1">
-            <div class="tw-font-semibold">Rohit S.</div>
-            <div class="tw-text-gray-700 dark:tw-text-gray-300">Data Engineer, CloudFuse</div>
-          </div>
-        </div>
-  
-        <p class="tw-mt-4 tw-text-gray-800 dark:tw-text-gray-200">
-          Hands-on SDLC projects and real-time debugging sessions helped me understand deployment pitfalls and
-          observability. The mentors simulated real team workflows — hugely practical.
-        </p>
-      </div>
-  
-      <div class="reveal-up tw-flex tw-h-fit tw-w-[350px] tw-break-inside-avoid 
-                  tw-flex-col tw-gap-4 tw-rounded-lg tw-border-[1px] 
-                  tw-bg-[#f2f3f4] dark:tw-bg-[#080808] dark:tw-border-[#1f2123] tw-p-4 max-lg:tw-w-[320px]">
-  
-        <div class="tw-flex tw-place-items-center tw-gap-3">
-          <div class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full">
-            <img src="./assets/images/people/man.jpg" class="tw-h-full tw-w-full tw-object-cover" alt="man" />
-          </div>
-          <div class="tw-flex tw-flex-col tw-gap-1">
-            <div class="tw-font-semibold">Priya N.</div>
-            <div class="tw-text-gray-700 dark:tw-text-gray-300">Product Manager, Relay AI</div>
-          </div>
-        </div>
-  
-        <p class="tw-mt-4 tw-text-gray-800 dark:tw-text-gray-200">
-          The program bridged the gap between engineering and product — I can now scope ML features, estimate risk,
-          and coordinate releases with data and infra teams much more effectively.
-        </p>
-      </div>
-  
-      <div class="reveal-up tw-flex tw-h-fit tw-w-[350px] tw-break-inside-avoid 
-                  tw-flex-col tw-gap-4 tw-rounded-lg tw-border-[1px] 
-                  tw-bg-[#f2f3f4] dark:tw-bg-[#080808] dark:tw-border-[#1f2123] tw-p-4 max-lg:tw-w-[320px]">
-  
-        <div class="tw-flex tw-place-items-center tw-gap-3">
-          <div class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full">
-            <img src="./assets/images/people/man2.jpg" class="tw-h-full tw-w-full tw-object-cover" alt="man" />
-          </div>
-          <div class="tw-flex tw-flex-col tw-gap-1">
-            <div class="tw-font-semibold">Sameer V.</div>
-            <div class="tw-text-gray-700 dark:tw-text-gray-300">CTO, EdgeLabs</div>
-          </div>
-        </div>
-  
-        <p class="tw-mt-4 tw-text-gray-800 dark:tw-text-gray-200">
-          We adopted several SDLC patterns from DeployH.ai across our ML teams — reproducible pipelines and model
-          monitoring improved release velocity and reduced rollback incidents.
-        </p>
-      </div>
-  
-      <div class="reveal-up tw-flex tw-h-fit tw-w-[350px] tw-break-inside-avoid 
-                  tw-flex-col tw-gap-4 tw-rounded-lg tw-border-[1px] 
-                  tw-bg-[#f2f3f4] dark:tw-bg-[#080808] dark:tw-border-[#1f2123] tw-p-4 max-lg:tw-w-[320px]">
-  
-        <div class="tw-flex tw-place-items-center tw-gap-3">
-          <div class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full">
-            <img src="./assets/images/people/women.jpg" class="tw-h-full tw-w-full tw-object-cover" alt="women" />
-          </div>
-          <div class="tw-flex tw-flex-col tw-gap-1">
-            <div class="tw-font-semibold">Neha T.</div>
-            <div class="tw-text-gray-700 dark:tw-text-gray-300">ML Ops Lead, ScaleGrid</div>
-          </div>
-        </div>
-  
-        <p class="tw-mt-4 tw-text-gray-800 dark:tw-text-gray-200">
-          The lab’s MLOps labs were exactly what my team needed — we learned practical CI/CD for models, automated
-          testing strategies, and rollback plans that actually work in production.
-        </p>
-      </div>
-  
-      <div class="reveal-up tw-flex tw-h-fit tw-w-[350px] tw-break-inside-avoid 
-                  tw-flex-col tw-gap-4 tw-rounded-lg tw-border-[1px] 
-                  tw-bg-[#f2f3f4] dark:tw-bg-[#080808] dark:tw-border-[#1f2123] tw-p-4 max-lg:tw-w-[320px]">
-  
-        <div class="tw-flex tw-place-items-center tw-gap-3">
-          <div class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full">
-            <img src="./assets/images/people/man.jpg" class="tw-h-full tw-w-full tw-object-cover" alt="man" />
-          </div>
-          <div class="tw-flex tw-flex-col tw-gap-1">
-            <div class="tw-font-semibold">Kavya R.</div>
-            <div class="tw-text-gray-700 dark:tw-text-gray-300">AI Engineer, BrightOps</div>
-          </div>
-        </div>
-  
-        <p class="tw-mt-4 tw-text-gray-800 dark:tw-text-gray-200">
-          Practical, SDLC-based training and mentor-led code reviews accelerated my learning — now I contribute to
-          full-stack model releases end-to-end.
-        </p>
-      </div>
-  
-    </div>
-  </section>
-  
+    </section>
 
+ 
 
-  
+    <!-- FOOTER - Mobile Responsive -->
+    <footer class="py-8 md:py-12 px-4 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-6xl mx-auto">
+            
+            <!-- Top Section -->
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-6 md:mb-8">
+                
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <img src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759916226/IMG-20251008-WA0000_incyau-removebg-preview_uond7d.png" 
+                         alt="DeployH.ai" 
+                         class="h-10 md:h-12 w-auto object-contain">
+                    <span class="text-lg md:text-xl font-bold text-gray-900">DeployH.ai</span>
+                </div>
 
-   
+                <!-- Contact Links -->
+                <div class="flex flex-wrap justify-center gap-4 text-sm md:text-base">
+                    <a href="tel:+917893816795" class="text-gray-600 hover:text-purple-600 transition-colors flex items-center gap-2">
+                        <i class="bi bi-telephone-fill"></i>
+                        <span class="hidden sm:inline">+91 7893816795</span>
+                        <span class="sm:hidden">Call Us</span>
+                    </a>
+                    <a href="mailto:admin@deployh.ai" class="text-gray-600 hover:text-purple-600 transition-colors flex items-center gap-2">
+                        <i class="bi bi-envelope-fill"></i>
+                        <span class="hidden sm:inline">admin@deployh.ai</span>
+                        <span class="sm:hidden">Email</span>
+                    </a>
+                   
+                </div>
+            </div>
 
-    <section
-    class="tw-relative tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-p-[5%] tw-px-[10%]">
-  
-    <h3 class="tw-text-4xl tw-font-medium max-md:tw-text-2xl">
-      Frequently Asked Questions
-    </h3>
-  
-    <div class="tw-mt-5 tw-flex tw-min-h-[300px] tw-w-full tw-max-w-[850px] tw-flex-col tw-gap-4">
-    
-      <div class="faq tw-w-full">
-        <h4 class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg">
-          <span>Who is this AI Engineer SDLC program meant for?</span>
-          <i class="bi bi-plus tw-text-xl tw-origin-center tw-duration-300 tw-transition-transform tw-ml-auto tw-font-semibold"></i>
-        </h4>
-        <div class="content max-lg:tw-text-sm">
-          This program is for developers, data scientists, or tech enthusiasts who want to master the full AI development lifecycle — from design to deployment in real-world settings.
+            <hr class="border-gray-300 mb-6">
+
+            <!-- Bottom Section -->
+            <div class="space-y-4 text-center md:text-left">
+                <div class="text-xs md:text-sm text-gray-600">
+                    <p class="mb-2">
+                        <strong class="text-gray-900">Deployh.ai Technologies Private Limited</strong>
+                    </p>
+                    <p>
+                        Regd Office: Mytri Square, 2-41-6/11, Miyapur RD, Kondapur, Telangana – 500084
+                    </p>
+                </div>
+
+                <div class="text-xs md:text-sm text-gray-500 pt-4 border-t border-gray-200">
+                    <p>© 2025 DeployH.ai Technologies Private Limited. All rights reserved.</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <hr>
-  
-      <div class="faq tw-w-full">
-        <h4 class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg">
-          <span>What technologies and tools will I use?</span>
-          <i class="bi bi-plus tw-text-xl tw-origin-center tw-duration-300 tw-transition-transform tw-ml-auto tw-font-semibold"></i>
-        </h4>
-        <div class="content max-lg:tw-text-sm">
-          You’ll work with industry-standard tools: Python, ML frameworks (TensorFlow / PyTorch), Docker, Kubernetes, AWS/GCP, CI/CD pipelines, version control, MLOps tooling, and more.
-        </div>
-      </div>
-      <hr>
-  
-      <div class="faq tw-w-full">
-        <h4 class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg">
-          <span>Are live projects and practicals included?</span>
-          <i class="bi bi-plus tw-text-xl tw-origin-center tw-duration-300 tw-transition-transform tw-ml-auto tw-font-semibold"></i>
-        </h4>
-        <div class="content max-lg:tw-text-sm">
-          Yes — 100% of the curriculum involves hands-on projects, real-time debugging, and deploying AI systems under mentor supervision.
-        </div>
-      </div>
-      <hr>
-  
-      <div class="faq tw-w-full">
-        <h4 class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg">
-          <span>Do I need prior machine learning experience?</span>
-          <i class="bi bi-plus tw-text-xl tw-origin-center tw-duration-300 tw-transition-transform tw-ml-auto tw-font-semibold"></i>
-        </h4>
-        <div class="content max-lg:tw-text-sm">
-          Some familiarity with programming (especially Python) and basic ML concepts helps. But we begin from fundamentals and support all learners to catch up.
-        </div>
-      </div>
-      <hr>
-  
-      <div class="faq tw-w-full">
-        <h4 class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg">
-          <span>Will I receive job-ready skills & certification?</span>
-          <i class="bi bi-plus tw-text-xl tw-origin-center tw-duration-300 tw-transition-transform tw-ml-auto tw-font-semibold"></i>
-        </h4>
-        <div class="content max-lg:tw-text-sm">
-          Absolutely. On completion, you’ll have real projects, a polished portfolio, and a certificate that demonstrates your readiness to work in AI engineering roles.
-        </div>
-      </div>
-      <hr>
-  
-    </div>
-  
-    <div class="purple-bg-grad max-md:tw-hidden reveal-up tw-absolute tw-bottom-14 tw-right-[20%] tw-h-[150px] tw-w-[150px] tw-rounded-full"></div>
-  
-  </section>
-  
+    </footer>
 
-    
-   
-  <footer class="tw-mt-auto tw-flex tw-flex-col tw-w-full tw-gap-4 tw-text-sm tw-pt-[5%] tw-pb-10 tw-px-[10%] 
-  tw-text-black dark:tw-text-white max-md:tw-flex-col">
-
-
-
-<!-- Footer Text -->
-<div class="tw-mt-4 tw-flex tw-w-full tw-items-center tw-justify-between tw-flex-wrap tw-gap-4 tw-text-gray-700 dark:tw-text-gray-300 tw-text-[13px] tw-px-4">
-
-    <!-- Left Side: Logo -->
-    <div class="tw-flex tw-items-center tw-gap-3">
-      <img 
-        src="https://res.cloudinary.com/dvmakyrcy/image/upload/v1759916226/IMG-20251008-WA0000_incyau-removebg-preview_uond7d.png" 
-        alt="DeployH.ai Logo" 
-        class="tw-h-10 tw-w-auto tw-object-contain" />
-      <span class="tw-font-semibold tw-text-base">DeployH.ai</span>
-    </div>
-  
-    <!-- Right Side: Company Info -->
-    <div class="tw-flex tw-flex-col tw-items-end max-md:tw-items-center tw-text-right max-md:tw-text-center tw-gap-1">
-      <span>A product by <strong>Deployh.ai Technologies Private Limited</strong></span>
-      <span>Regd Office: Mytri Square, 2-41-6/11, Miyapur RD, Kondapur, Telangana – 500084</span>
-    </div>
-  
-  </div>
-  
-</footer>
-
+    <!-- Scroll to Top Button (Mobile Friendly) -->
+    <a href="#" class="fixed bottom-6 right-6 bg-gradient-to-r from-purple-600 to-cyan-500 text-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform z-50">
+        <i class="bi bi-arrow-up text-xl md:text-2xl"></i>
+    </a>
 
 </body>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"
-    integrity="sha512-B1lby8cGcAUU3GR+Fd809/ZxgHbfwJMp0jLTVfHiArTuUt++VqSlJpaJvhNtRf3NERaxDNmmxkdx2o+aHd4bvw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"
-    integrity="sha512-AY2+JxnBETJ0wcXnLPCcZJIJx0eimyhz3OJ55k2Jx4RtYC+XdIi2VtJQ+tP3BaTst4otlGG1TtPJ9fKrAUnRdQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"
-    integrity="sha512-hIlMpy2enepx9maXZF1gn0hsvPLerXoLHdb095CmRY5HG3bZfN7XPBZ14g+TUDH1aGgfLyPHmY9/zuU53smuMw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<script src="./script/components.js"></script>
-<script src="./index.js"></script>
-
 
 </html>
