@@ -26,6 +26,9 @@
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+            display: inline-block;
+            padding-bottom: 0.1em;
         }
         
         html {
@@ -85,7 +88,10 @@
             <!-- Main Heading -->
             <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
                 <span class="block mb-2">Become a Certified</span>
-                <span class="block gradient-text mb-2">AI Engineer</span>
+              <div class="flex  justify-center gap-2">
+                <span class="block gradient-text">AI</span>
+                <span id="typing-text" class="block gradient-text mb-2 min-h-[1.2em]"></span>
+              </div>
                 <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">in 4 Weeks!</span>
             </h1>
 
@@ -680,6 +686,55 @@
     <a href="#" class="fixed bottom-6 right-6 bg-gradient-to-r from-purple-600 to-cyan-500 text-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform z-50">
         <i class="bi bi-arrow-up text-xl md:text-2xl"></i>
     </a>
+
+    <!-- Typing Animation Script -->
+    <script>
+        const words = ['Engineer', 'Innovator', 'Developer'];
+        const typingElement = document.getElementById('typing-text');
+        let currentWordIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100; // milliseconds
+        let deletingSpeed = 50; // milliseconds
+        let pauseBetweenWords = 2000; // milliseconds
+
+        function typeText() {
+            const currentWord = words[currentWordIndex];
+            
+            if (isDeleting) {
+                // Delete characters
+                typingElement.textContent = currentWord.substring(0, currentCharIndex - 1);
+                currentCharIndex--;
+                
+                if (currentCharIndex === 0) {
+                    isDeleting = false;
+                    currentWordIndex = (currentWordIndex + 1) % words.length;
+                    // Start typing immediately without pause to avoid empty space
+                    setTimeout(typeText, 100);
+                    return;
+                }
+                
+                setTimeout(typeText, deletingSpeed);
+            } else {
+                // Type characters
+                typingElement.textContent = currentWord.substring(0, currentCharIndex + 1);
+                currentCharIndex++;
+                
+                if (currentCharIndex === currentWord.length) {
+                    isDeleting = true;
+                    setTimeout(typeText, pauseBetweenWords);
+                    return;
+                }
+                
+                setTimeout(typeText, typingSpeed);
+            }
+        }
+
+        // Start the typing animation when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(typeText, 1000); // Start after 1 second
+        });
+    </script>
 
 </body>
 
